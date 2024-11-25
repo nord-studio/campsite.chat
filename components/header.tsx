@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { AlignJustify, XIcon } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { ny } from '~/lib/utils'
+import { cn } from '~/lib/utils'
 import Icons from './icons'
 import { Button } from './ui/button'
 import { ThemeToggle } from './theme/toggle'
@@ -141,7 +141,7 @@ export function Header() {
 					exit="exit"
 					variants={mobilenavbarVariant}
 					animate={hamburgerMenuIsOpen ? 'animate' : 'exit'}
-					className={ny(
+					className={cn(
 						`bg-background/70 fixed left-0 top-0 z-50 h-screen w-full overflow-auto backdrop-blur-md `,
 						{
 							'pointer-events-none': !hamburgerMenuIsOpen,

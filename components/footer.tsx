@@ -1,4 +1,4 @@
-import { GitHubLogoIcon, InstagramLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons"
+import { GitHubLogoIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 import Icons from "./icons"
 
@@ -52,15 +52,10 @@ const footerSocials = [
       icon: <GitHubLogoIcon className="size-4" />,
    },
    {
-      href: "/twitter",
-      name: "Twitter",
-      icon: <TwitterLogoIcon className="size-4" />,
+      href: "/bluesky",
+      name: "BlueSky",
+      icon: <Icons.BlueSky className="size-4" />,
    },
-   {
-      href: "/instagram",
-      name: "Instagram",
-      icon: <InstagramLogoIcon className="size-4" />,
-   }
 ]
 
 export function Footer() {

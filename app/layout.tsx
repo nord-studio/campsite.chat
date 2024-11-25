@@ -5,7 +5,8 @@ import { Header } from "~/components/header"
 import ParticleBackground from "~/components/particles"
 import { ThemeProvider } from "~/components/theme/provider"
 import { Toaster } from "~/components/ui/sonner"
-import { ny } from "~/lib/utils"
+import { TooltipProvider } from "~/components/ui/tooltip"
+import { cn } from "~/lib/utils"
 
 import "~/styles/globals.css"
 
@@ -27,7 +28,7 @@ export default function RootLayout({
    return (
       <html lang="en" suppressHydrationWarning>
          <body
-            className={ny(
+            className={cn(
                "bg-background min-h-screen font-sans antialiased",
                fontSans.variable,
             )}
@@ -39,7 +40,9 @@ export default function RootLayout({
             >
                <Header />
                <main className="mx-auto flex-1 overflow-hidden min-h-screen">
-                  {children}
+                  <TooltipProvider delayDuration={150}>
+                     {children}
+                  </TooltipProvider>
                   <ParticleBackground />
                </main>
                <Footer />

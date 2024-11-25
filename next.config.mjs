@@ -4,17 +4,12 @@ const nextConfig = {
 		return [
 			{
 				source: "/github",
-				destination: "https://github.com/campsite-chat",
+				destination: "https://github.com/nord-studio/campsite.chat",
 				permanent: true,
 			},
 			{
-				source: "/twitter",
-				destination: "https://twitter.com/campsitechat",
-				permanent: true,
-			},
-			{
-				source: "/instagram",
-				destination: "https://instagram.com/campsitechat",
+				source: "/bluesky",
+				destination: "https://bsky.app/profile/campsite.chat",
 				permanent: true,
 			},
 		];
@@ -22,9 +17,7 @@ const nextConfig = {
 	images: {
 		remotePatterns: [
 			{
-				protocol: "https",
 				hostname: "github.com",
-				port: "",
 			},
 		],
 	},

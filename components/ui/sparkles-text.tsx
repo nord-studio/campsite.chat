@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import type { CSSProperties, ReactElement } from 'react'
 import { useEffect, useState } from 'react'
-import { ny } from '~/lib/utils'
+import { cn } from '~/lib/utils'
 
 interface Sparkle {
    id: string
@@ -104,7 +104,7 @@ const SparklesText: React.FC<SparklesTextProps> = ({
 
    return (
       <div
-         className={ny('text-6xl font-bold', className)}
+         className={cn('text-6xl font-bold', className)}
          {...props}
          style={
             {

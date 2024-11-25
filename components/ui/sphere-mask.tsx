@@ -1,9 +1,9 @@
-import { ny } from "~/lib/utils"
+import { cn } from "~/lib/utils"
 
 export function SphereMask({ reverse = false }: { reverse?: boolean }) {
    return (
       <div
-         className={ny(
+         className={cn(
             // color
             "[--color:var(--color-one)]",
             "pointer-events-none relative -z-[2] mx-auto h-[50rem] overflow-hidden",
