@@ -30,6 +30,7 @@ const preAlphaTimeline = [
 		title: "Direct Messages",
 		description:
 			"Communicate with your fellow friends one-on-one in a secure manner.",
+		done: true,
 	},
 	{
 		title: "Group Chats",
