@@ -22,7 +22,7 @@ export default function TeamPage() {
 				<p className="animate-fade-in mb-12 -translate-y-4 text-balance text-lg tracking-tight text-gray-400 opacity-0 [--animation-delay:400ms] md:text-xl">
 					Everything starts with conversation. Campsite was born from
 					discourse about the lack of stable, standerdized
-					communication platforms. We're aspire to change that.
+					communication platforms. We aspire to change that.
 				</p>
 				<div className="animate-fade-up mt-16 opacity-0 [--animation-delay:400ms] [perspective:2000px] flex flex-col gap-6 items-center w-full">
 					<h2 className="text-2xl md:text-3xl font-semibold">

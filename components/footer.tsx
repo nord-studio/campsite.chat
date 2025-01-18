@@ -3,47 +3,47 @@ import Link from "next/link"
 import Icons from "./icons"
 
 const footerNavs = [
-   {
-      label: "About",
-      items: [
-         {
-            href: "/",
-            name: "About",
-            disabled: false
-         },
-         {
-            href: "/team",
-            name: "Team",
-            disabled: false
-         },
-         {
-            href: "/roadmap",
-            name: "Roadmap",
-            disabled: false
-         },
-      ]
-   },
-   {
-      label: "Downloads",
-      items: [
-         {
-            href: "",
-            name: "Windows",
-            disabled: true
-         },
-         {
-            href: "",
-            name: "macOS",
-            disabled: true
-         },
-         {
-            href: "",
-            name: "Linux",
-            disabled: true
-         },
-      ],
-   },
-]
+	{
+		label: "About",
+		items: [
+			{
+				href: "/",
+				name: "About",
+				disabled: false,
+			},
+			{
+				href: "/team",
+				name: "Team",
+				disabled: false,
+			},
+			{
+				href: "/roadmap",
+				name: "Roadmap",
+				disabled: false,
+			},
+		],
+	},
+	{
+		label: "Downloads",
+		items: [
+			{
+				href: "/api/download/windows",
+				name: "Windows",
+				disabled: false,
+			},
+			{
+				href: "/api/download/macos",
+				name: "macOS",
+				disabled: false,
+			},
+			{
+				href: "/api/download/linux",
+				name: "Linux",
+				disabled: false,
+			},
+		],
+	},
+];
 
 const footerSocials = [
    {

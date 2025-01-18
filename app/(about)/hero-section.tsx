@@ -6,15 +6,33 @@ import { useRef } from "react";
 import { BorderBeam } from "~/components/ui/border-beam";
 import TextShimmer from "~/components/ui/text-shimmer";
 import { Button } from "~/components/ui/button";
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipTrigger,
-} from "~/components/ui/tooltip";
+import React from "react";
+import Link from "next/link";
 
 export default function HeroSection() {
 	const ref = useRef(null);
 	const inView = useInView(ref, { once: true, margin: "-100px" });
+	const [os, setOS] = React.useState("Unknown");
+	const [downloadLink, setDownloadLink] = React.useState("");
+
+	React.useEffect(() => {
+		const userAgent = navigator.userAgent;
+		if (userAgent.includes("Win")) setOS("Windows");
+		else if (userAgent.includes("Mac")) setOS("MacOS");
+		else if (userAgent.includes("Linux")) setOS("Linux");
+		else setOS("Unknown");
+
+		if (userAgent.includes("Win")) setDownloadLink("/api/download/windows");
+		else if (userAgent.includes("Mac"))
+			setDownloadLink("/api/download/macos");
+		else if (userAgent.includes("Linux"))
+			setDownloadLink("/api/download/linux");
+		else
+			setDownloadLink(
+				"https://web.crabnebula.cloud/campsite-chat/campsite/releases"
+			);
+	}, []);
+
 	return (
 		<section
 			id="hero"
@@ -22,7 +40,7 @@ export default function HeroSection() {
 		>
 			<div className="backdrop-filter-[12px] animate-fade-in group inline-flex h-7 -translate-y-4 items-center justify-between gap-1 rounded-full border dark:border-white/5 bg-black/5 dark:bg-white/10 px-3 text-xs text-white opacity-0 transition-all ease-in hover:cursor-pointer hover:bg-black/10 dark:hover:bg-white/15 dark:text-black">
 				<TextShimmer className="inline-flex items-center justify-center">
-					<span>Introducing Campsite</span>{" "}
+					<span>Alpha 0.0.1 is out!</span>{" "}
 					<ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
 				</TextShimmer>
 			</div>
@@ -35,15 +53,14 @@ export default function HeroSection() {
 				<br className="hidden md:block" /> Rust and TypeScript to bring
 				you a secure, fast, and sleek chat app.
 			</p>
-				<Tooltip>
-					<TooltipContent>Not available yet</TooltipContent>
-					<TooltipTrigger asChild>
-						<Button className="animate-fade-in disabled -translate-y-4 gap-1 rounded-lg text-white opacity-0 ease-in-out [--animation-delay:600ms] dark:text-black cursor-not-allowed">
-							<span>Download Now</span>
-							<ArrowRightIcon className="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
-						</Button>
-					</TooltipTrigger>
-				</Tooltip>
+			<Link href={downloadLink} passHref target="_blank">
+				<Button className="animate-fade-in -translate-y-4 gap-1 rounded-lg text-white opacity-0 ease-in-out [--animation-delay:600ms] dark:text-black">
+					<span>
+						Download {os === "Unknown" ? "now" : `for ${os}`}
+					</span>
+					<ArrowRightIcon className="ml-1 size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+				</Button>
+			</Link>
 			<div
 				ref={ref}
 				className="animate-fade-up relative mt-32 opacity-0 [--animation-delay:400ms] [perspective:2000px] after:absolute after:inset-0 after:z-50 after:[background:linear-gradient(to_top,hsl(var(--background))_30%,transparent)]"
